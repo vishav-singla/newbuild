@@ -1,0 +1,21 @@
+============================================
+   SALES ANALYTICS CONSOLE RUNNER           
+============================================
+Loading data from data/transaction_logs.csv...
+
+--- ANALYSIS RESULTS ---
+
+1. Total Revenue: $54,321.50
+
+2. Revenue by Category:
+   - Electronics    : $32,100.25
+   - Furniture      : $22,221.25
+
+3. Top Single Sale: Desk ($1,049.15)
+
+4. Most Popular Product: Monitor
+
+5. Statistics:
+   - Mean Sale:   $543.21
+   - Median Sale: $532.03
+

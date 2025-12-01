@@ -1,79 +1,38 @@
-# Coding Challenge Implementation
+# Project
 
-This repository contains the completed coding challenge assignments, organized into two distinct microservices.
+This repository contains the implementation of two coding assignments, organized as independent microservices.
 
-## Repository Structure
+## Project Structure
 
-*   **`thread-service/`** (Assignment 1)
-    *   **Language**: Java (Spring Boot)
-    *   **Focus**: Producer-Consumer pattern, Thread Synchronization (`wait`/`notify`), Blocking Queues.
-    *   **Key Files**: `BoundedMessageQueue.java`, `MessageProducer.java`, `MessageConsumer.java`.
+```text
+build/
+├── thread-service/       # Assignment 1: Java Producer-Consumer
+│   ├── src/main/java     # Source code (Spring Boot)
+│   ├── src/test/java     # JUnit 5 Tests
+│   └── README.md         # Instructions & Sample Output
+│
+└── analytics-service/    # Assignment 2: Python Data Analysis
+    ├── src/              # Core Logic (Functional Programming)
+    ├── tests/            # Pytest Suite
+    ├── data/             # CSV Data
+    └── README.md         # Instructions & Sample Output
+```
 
-*   **`analytics-service/`** (Assignment 2)
-    *   **Language**: Python
-    *   **Focus**: Functional Programming (Streams, Lambda), Data Aggregation, API Analysis.
-    *   **Key Files**: `processor.py`, `app.py` (FastAPI), `console_runner.py`.
+## Assignment 1: Producer-Consumer (Java)
 
----
+Located in `thread-service/`.
+Implements a thread-safe `BoundedMessageQueue` using `wait()` and `notify()` to manage concurrent producers and consumers.
 
-## Assignment 1: Thread Service (Java)
+- **Key Concepts**: Thread Synchronization, Blocking Queues, Concurrency.
+- **Run**: `cd thread-service && mvn spring-boot:run`
 
-### Description
-Implements a thread-safe `BoundedMessageQueue` handling concurrent data transfer between multiple Producers and Consumers.
+## Assignment 2: Sales Analytics (Python)
 
-### How to Run
-1.  **Navigate to directory**:
-    ```bash
-    cd thread-service
-    ```
-2.  **Run Tests**:
-    ```bash
-    mvn test
-    ```
-3.  **Run Application**:
-    ```bash
-    mvn spring-boot:run
-    ```
-    *Output will demonstrate the concurrent processing logs in the console.*
+Located in `analytics-service/`.
+Performs statistical analysis on CSV sales data using Python's functional programming features (`map`, `reduce`, `lambda`, `itertools`).
+
+- **Key Concepts**: Functional Programming, Streams, Aggregation.
+- **Run**: `cd analytics-service && python3 console_runner.py`
 
 ---
-
-## Assignment 2: Analytics Service (Python)
-
-### Description
-Performs data analysis on sales records using functional programming paradigms (`map`, `reduce`, `groupby`).
-
-### Setup
-1.  **Navigate to directory**:
-    ```bash
-    cd analytics-service
-    ```
-2.  **Create Environment**:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    ```
-3.  **Generate Data**:
-    ```bash
-    python3 generate_data.py
-    ```
-
-### How to Run
-1.  **Console Output (Requirement)**:
-    ```bash
-    python3 console_runner.py
-    ```
-    *Prints total revenue, category breakdown, and statistics to the terminal.*
-
-2.  **Run Unit Tests**:
-    ```bash
-    export PYTHONPATH=$PYTHONPATH:$(pwd)
-    pytest tests
-    ```
-
-3.  **Start API (Optional)**:
-    ```bash
-    uvicorn app:app --reload --port 8000
-    ```
-
+*Refer to the individual `README.md` files in each service directory for detailed setup and testing instructions.*
