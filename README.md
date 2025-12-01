@@ -1,6 +1,6 @@
-# Coding Challenge Implementation
+# Implementation
 
-This repository contains the completed coding challenge assignments, organized into two distinct microservices.
+This repository contains the completed assignments, organized into two distinct microservices.
 
 ## Repository Structure
 
